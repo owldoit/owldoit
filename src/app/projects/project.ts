@@ -4,6 +4,6 @@ export class Project {
 	    public title: string,
 	    public description: string,
 	    public deadline: Date,
-	    public participants: number
+	    public participants?: number
 	) {  }
 }

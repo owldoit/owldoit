@@ -8,11 +8,12 @@ import { Project }    from '../project';
   styleUrls: ['./project-form.component.css']
 })
 export class ProjectFormComponent {
-  model = new Project(0, "test title", "writing stuff here to test", new Date("2019-01-24"), 1);
+  model = new Project(0, '', '', null, 1);
 	submitted = false;
 
   onSubmit() { this.submitted = true; }
 
-  // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.model); }
+  newProject() {
+	  this.model = new Project(0, '', '', null, 1);
+	}
 }
