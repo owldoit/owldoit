@@ -10,8 +10,24 @@ import { Project }    from '../project';
 export class ProjectFormComponent {
   model = new Project(0, '', '', null, 1);
 	submitted = false;
+	verifiedSubmit = false;
 
-  onSubmit() { this.submitted = true; }
+
+  onSubmit() { 
+  	if(this.submitted){
+  		this.verifiedSubmit = true;
+  	}
+
+  	if(!this.verifiedSubmit){
+  		this.submitted = true;
+  	}
+
+  	if(this.verifiedSubmit)
+  	{
+  		this.verifiedSubmit = true;
+  		this.submitted = true;
+  	}
+  }
 
   newProject() {
 	  this.model = new Project(0, '', '', null, 1);
