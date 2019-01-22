@@ -3,14 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { Profile } from './profile/profile.component.html/profile.component.html.component';
-import { ProfileComponent } from './profile/profile/profile.component';
+import { Profile1Component } from './profile1/profile1.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    Profile.Component.HtmlComponent,
-    ProfileComponent
+    Profile1Component
   ],
   imports: [
     BrowserModule,
