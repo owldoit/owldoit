@@ -1,0 +1,79 @@
+<div class="container" [hidden]="submitted">
+    <h1 class="text-center">Project Form</h1>
+    <form (ngSubmit)="onSubmit()" #projectForm="ngForm">
+			<div class="form-group">
+        <label for="title">Project Title</label>
+        <input type="text" class="form-control" id="title" name="title" [(ngModel)]="model.title" #title="ngModel" required>
+        <div [hidden]="title.valid || title.pristine"
+				     class="alert alert-danger">
+				  Title is required
+				</div>
+      </div>
+
+      <div class="form-group">
+        <label for="deadline">Project Deadline</label>
+        <input type="date" class="form-control" id="deadline" name="deadline" [(ngModel)]="model.deadline" #deadline="ngModel" required>
+        <div [hidden]="deadline.valid || deadline.pristine"
+				     class="alert alert-danger">
+				  Deadline is required
+				</div>
+      </div>
+
+      <div class="form-group">
+        <label for="participants">Minimum Project Participants</label>
+        <input type="number" class="form-control" id="participants" name="participants" [(ngModel)]="model.participants" #participants="ngModel" min="1" max="10">
+      </div>
+ 
+      <div class="form-group">
+        <label for="description">Project Description</label>
+        <textarea class="form-control" id="description" name="description" [(ngModel)]="model.description" #description="ngModel" required></textarea>
+        <div [hidden]="description.valid || description.pristine"
+				     class="alert alert-danger">
+				  Description is required
+				</div>
+      </div>
+ 
+      <button type="submit" class="btn btn-success" [disabled]="!projectForm.form.valid">Review Project</button>
+      <br><br>
+      <button type="button" class="btn btn-danger" (click)="newProject(); projectForm.reset()">Clear Form</button>
+ 
+    </form>
+</div>
+
+<div class="container" [hidden]="!submitted">
+  <h2 class="text-center">Project Form</h2>
+
+  <h3 class="col-xl-6">Project Title:</h3>
+  <div class="row">
+    <div class="col-xs-9">{{ model.title }}</div>
+  </div>
+
+  <h3 class="col-xl-6">Project Deadline:</h3>
+  <div class="row">
+    <div class="col-xs-9">{{ model.deadline }}</div>
+  </div>
+
+  <h3 class="col-xl-6">Minimum Project Participants:</h3>
+  <div class="row">
+    <div class="col-xs-9">{{ model.participants }}</div>
+  </div>
+
+  <h3 class="col-xl-6">Project Description:</h3>
+  <div class="row">
+    <div class="col-xs-9">{{ model.description }}</div>
+  </div>
+
+  <br>
+  <div class="container">
+		<h6 class="row text-danger small">
+			*By submitting this form you are agreeing to the terms her after. All persons that will work on your project and any other project on this side are students in affiliation with Geekwise, everything in your project is appropriate for minors, and that the primary purpose of all projects are for the education of the student. It is possible that your project may not be completed by the desired deadline or not completed at all. Students receive no compensation for working on these projects. You will not pressure or persue any student to work on your project or complete your project. Failure to abide by any of these terms may result in removal of your project and prohibiation of submition of additional projects in the future by you and any organizations you are affilated with.
+		</h6>
+
+  	<div class="row">
+		  <button class="btn btn-primary col-xs-6" (click)="submitted=false" [disabled]="verifiedSubmit">Edit</button>
+		  <form class="col-xs-6 ml-1" (ngSubmit)="onSubmit()" #projectForm="ngForm">
+		  	<button type="submit" class="btn btn-success">Submit Project</button>
+		  </form>
+	  <div class="row">
+	 </div>
+</div>
