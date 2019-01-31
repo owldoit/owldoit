@@ -1,0 +1,22 @@
+.nav {
+  position:absolute;
+  width: 120px;
+  height: 100%;
+  padding: 0px;
+}
+a {
+  color: white;
+}
+
+.nav {
+  font-size: 1em;
+  background-color: #282828;
+
+}
+
+.nav-link:hover {
+  color: #282828;
+}
+a.nav-link:hover {
+  background-color: white;
+}
