@@ -8,7 +8,7 @@ import { Project }    from '../project';
   styleUrls: ['./project-form.component.css']
 })
 export class ProjectFormComponent {
-  model = new Project(0, '', '', null, 1);
+  project = new Project(0, 0, '', '', null, 1);
 	submitted = false;
 	verifiedSubmit = false;
 
@@ -30,6 +30,6 @@ export class ProjectFormComponent {
   }
 
   newProject() {
-	  this.model = new Project(0, '', '', null, 1);
+	  this.project = new Project(0, 0, '', '', null, 1);
 	}
 }
