@@ -4,9 +4,9 @@
       {{ user | json }}
     </pre>
     <hr>
-    <button class="button" (click)="auth.signOut()">Sign Out</button>
+    <button class="button" class="btn btn-warning" (click)="auth.signOut()">Sign Out</button>
   </div>
   
   <ng-template #login>
-    <button class="button" (click)="auth.googleSignin()">Login with Google</button>
+    <button class="button" class="btn btn-warning" (click)="auth.googleSignin()">Login with Google</button>
   </ng-template>
