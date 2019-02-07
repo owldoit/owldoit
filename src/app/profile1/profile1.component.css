@@ -1,0 +1,9 @@
+html, body {
+    height: auto;
+    width: auto;
+  }
+  div.container {
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    padding: 0px;
