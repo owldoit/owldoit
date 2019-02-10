@@ -8,10 +8,11 @@ import { Project }    from '../project';
   styleUrls: ['./project-form.component.css']
 })
 export class ProjectFormComponent {
-  project = new Project(0, 0, '', '', null, 1);
+	project = new Project(0, '', '', '', null, 1);
 	submitted = false;
 	verifiedSubmit = false;
 
+	constructor ( ) {}
 
   onSubmit() { 
   	if(this.submitted){
@@ -30,6 +31,6 @@ export class ProjectFormComponent {
   }
 
   newProject() {
-	  this.project = new Project(0, 0, '', '', null, 1);
+	  this.project = new Project(0, '', '', '', null, 1);
 	}
 }
