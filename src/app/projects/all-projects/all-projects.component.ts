@@ -15,5 +15,6 @@ export class AllProjectsComponent implements OnInit {
     this.projects = afs.collection('/projects').valueChanges();
   }
 
+
   ngOnInit() {}
 }
