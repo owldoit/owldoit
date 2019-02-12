@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { ProjectFormComponent } from './projects/project-form/project-form.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AllProjectsComponent } from './projects/all-projects/all-projects.component';
+import { ProjectDetailComponent } from './projects/project-detail/project-detail.component';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -33,7 +34,8 @@ const config = {
     LoginComponent,
     LandingPageComponent,
     ProjectFormComponent,
-    AllProjectsComponent
+    AllProjectsComponent,
+    ProjectDetailComponent
   ],
   imports: [
     BrowserModule,
