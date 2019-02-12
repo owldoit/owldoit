@@ -1,46 +1,59 @@
-<div class="container">
-  <div class="row">
-    <div class="offset-md-1 col-md-5 ">
-      <h1 class="custNa"> {{ first.name }} {{ last.name }} </h1>
-      <h3 class="businessName"> {{ business.company }} </h3>
-    </div>
-    <div class="offset-md-1 col-md-5 ">
-      <img src="" alt="" class="profilePic">
-    </div>
-  </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="offset-md-1 col-md-10">
-      <h3 class="bio"> Biography:</h3>
-      <p class="bio2Text"> {{ customer.Bio }} </p>
-    </div>
-  </div>
-</div>
-<div class="contain">
-  <div class="row">
-    <div class="offset-md-1 col-md-10 offset-md-1 ">
-      <h3 class="projects"> Past and Present Projects:</h3>
-      <p class="projectInfo"> {{ project.info } </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Customer Profile Page</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="offset-md-1 col-md-5 ">
+        <h1 class="customer-name"> {{ first.name }} {{ last.name }} </h1>
+        <h3 class="business-name"> {{ business.company }} </h3>
+      </div>
+      <div class="offset-md-1 col-md-5 ">
+        <img src="" alt="" class="profile-pic">
+      </div>
     </div>
   </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="offset-md-1 col-md-10 offset-md-1">
-      <h3 class="contactInfo"> Contact: </h3>
-        <h5 class="emailInfo"> Email: {{ email.info }} </h5>
-        <h5 class="phoneNumb"> Phone: {{ phone.number }} </h5>
-        <h5 class="slack"> Slack: {{ slack.username }} </h5>
-        <h5 class="otherInfo"> Other contact: {{ other.contact }} </h5>
+  <div class="container">
+    <div class="row">
+      <div class="offset-md-1 col-md-10">
+        <h3 class="biography-header"> Biography:</h3>
+        <p class="biography-text"> {{ customer.Bio }} </p>
+      </div>
     </div>
   </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="offset-md-1 col-md-10 offset-md-1">
-      <h3 class="userAgree"> User agreement: </h3>
-        <p class="blehblehbleh"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, quo enim nulla nemo iusto voluptatum, expedita laboriosam nobis soluta necessitatibus ex recusandae possimus accusamus aperiam debitis tenetur nihil corrupti. Recusandae. </p>
+  <div class="contain">
+    <div class="row">
+      <div class="offset-md-1 col-md-10 offset-md-1 ">
+        <h3 class="projects"> Past and Present Projects:</h3>
+        <p class="projectInfo"> {{ project.info } </p>
+      </div>
     </div>
   </div>
-</div>
+  <div class="container">
+    <div class="row">
+      <div class="offset-md-1 col-md-10 offset-md-1">
+        <h3 class="contactInfo"> Contact: </h3>
+          <h5 class="emailInfo"> Email: {{ email.info }} </h5>
+          <h5 class="phoneNumb"> Phone: {{ phone.number }} </h5>
+          <h5 class="slack"> Slack: {{ slack.username }} </h5>
+          <h5 class="otherInfo"> Other contact: {{ other.contact }} </h5>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="offset-md-1 col-md-10 offset-md-1">
+        <h3 class="userAgree"> User agreement: </h3>
+          <p class="blehblehbleh"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, quo enim nulla nemo iusto voluptatum, expedita laboriosam nobis soluta necessitatibus ex recusandae possimus accusamus aperiam debitis tenetur nihil corrupti. Recusandae. </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+<!-- I don't know what I'm doing!!!!1!! -->

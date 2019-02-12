@@ -2,8 +2,15 @@ html, body {
     height: auto;
     width: auto;
   }
-  div.container {
-    margin: 0 auto;
+div.container {
+   margin: 0 auto;
+   height: 100%;
+   width: 100%;
+   padding: 0px;
+ }
+.background {
+    position: absolute;
+    background-color: #697654;
+    background-size: cover;
     height: 100%;
-    width: 100%;
-    padding: 0px;
+ }

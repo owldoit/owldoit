@@ -1,49 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<div class="container">
-  <div class="row">
-    <div class="offset-md-1 col-md-5 ">
-      <h1 class="student-name"> {{ first.name }} {{ last.name }} </h1>
-      <h3 class="expirence"> {{ time.expirence }} </h3>
-      <h3 class="student-employment"> {{student.employment}} </h3>
-    </div>
-    <div class="offset-md-1 col-md-5 ">
-      <img src="" alt="" class="profile-pic">
-    </div>
-  </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="offset-md-1 col-md-10">
-      <h3 class="biography-header"> Biography:</h3>
-      <p class="bio-text"> {{ student.Bio }} </p>
-    </div>
-  </div>
-</div>
-<div class="contain">
-  <div class="row">
-    <div class="offset-md-1 col-md-10 offset-md-1 ">
-      <h3 class="language-header"> Languages/Sublanguages:</h3>
-      <p class="language-text"> {{sublanguage.text}} </p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Student Profile Pagex</title>
+</head>
+<body>
+  <div class="container background">
+    <div class="row">
+      <div class="offset-md-1 col-md-5 ">
+        <h1 class="student-name"> {{ first.name }} {{ last.name }} </h1>
+        <h3 class="expirence"> {{ time.expirence }} </h3>
+        <h3 class="student-employment"> {{student.employment}} </h3>
+      </div>
+      <div class="offset-md-1 col-md-5 ">
+        <img src="" alt="" class="profile-pic">
+      </div>
     </div>
   </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="offset-md-1 col-md-10 offset-md-1">
-      <h3 class="contact-info"> Contact: </h3>
-        <h5 class="email-info"> Email: {{ email.info }} </h5>
-        <h5 class="phone-number"> Phone: {{ phone.number }} </h5>
-        <h5 class="slack"> Slack: {{ slack.username }} </h5>
-        <h5 class="github-info"> Github: {{ github.username }} </h5>
+  <div class="container background">
+    <div class="row">
+      <div class="offset-md-1 col-md-10">
+        <h3 class="biography-header"> Biography:</h3>
+        <p class="bio-text"> {{ student.Bio }} </p>
+      </div>
     </div>
   </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="offset-md-1 col-md-10 offset-md-1">
-      <h3 class="user-agreement"> User agreement: </h3>
-        <p class="agreement-text"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, quo enim nulla nemo iusto voluptatum, expedita laboriosam nobis soluta necessitatibus ex recusandae possimus accusamus aperiam debitis tenetur nihil corrupti. Recusandae. </p>
+  <div class="contain background">
+    <div class="row">
+      <div class="offset-md-1 col-md-10 offset-md-1 ">
+        <h3 class="language-header"> Languages/Sublanguages:</h3>
+        <p class="language-text"> {{sublanguage.text}} </p>
+      </div>
     </div>
   </div>
-</div>
+  <div class="container background">
+    <div class="row">
+      <div class="offset-md-1 col-md-10 offset-md-1">
+        <h3 class="contact-info"> Contact: </h3>
+          <h5 class="email-info"> Email: {{ email.info }} </h5>
+          <h5 class="phone-number"> Phone: {{ phone.number }} </h5>
+          <h5 class="slack"> Slack: {{ slack.username }} </h5>
+          <h5 class="github-info"> Github: {{ github.username }} </h5>
+      </div>
+    </div>
+  </div>
+  <div class="container background">
+    <div class="row">
+      <div class="offset-md-1 col-md-10 offset-md-1">
+        <h3 class="user-agreement"> User agreement: </h3>
+          <p class="agreement-text"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, quo enim nulla nemo iusto voluptatum, expedita laboriosam nobis soluta necessitatibus ex recusandae possimus accusamus aperiam debitis tenetur nihil corrupti. Recusandae. </p>
+      </div>  
+    </div>
+  </div>
+  
+</body>
+</html>
