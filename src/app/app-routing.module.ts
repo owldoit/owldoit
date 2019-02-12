@@ -10,6 +10,7 @@ const routes: Routes = [
 { path: '', component: LandingPageComponent },
 { path: 'project', component: ProjectFormComponent },
 { path: 'login', component: LoginComponent },
+{ path: 'profile1', component: Profile1Component },
 ];
 
 

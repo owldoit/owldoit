@@ -1,7 +1,9 @@
-html, body {
+/* html, body {
     height: auto;
     width: auto;
-  }
+    background-color: #697654;
+} */
+  /* }
 div.container {
    margin: 0 auto;
    height: 100%;
@@ -14,3 +16,17 @@ div.container {
     background-size: cover;
     height: 100%;
  }
+ .container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+} */
+/* h1 {
+  text-align: center;
+  color: black;
+  margin-top: 4em;
+  text-shadow: black 1px 1px;
+} */
