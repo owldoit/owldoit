@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
+import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 
@@ -22,8 +23,6 @@ export class FirestoreDataService {
           a => {
             const data = a.payload.doc.data() as Project;
             data.id = a.payload.doc.id;
-            console.log("data.id");
-            console.log(data.id);
             return data;
           });
       });
@@ -34,15 +33,19 @@ export class FirestoreDataService {
   }
 
   addProject(project) {
-  	console.log("addProject():");
-  	console.log(project);
   	project.id = this.projectsCollection.ref.doc().id
+  	project.ownerId = this.getUserId();
     this.projectsCollection.add(project);
   }
 
   deleteProject(project) {
     this.projectDocument = this._afs.doc(`projects/${project.id}`);
     this.projectDocument.delete();
+  }
+
+  getUserId(){
+  	let user = firebase.auth().currentUser;
+  	return user.uid;
   }
 
 }

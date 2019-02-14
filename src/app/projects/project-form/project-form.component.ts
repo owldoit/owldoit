@@ -18,7 +18,6 @@ export class ProjectFormComponent implements OnInit {
     this._data.getProjects().subscribe(
       (project: Project[]) => {
         this.projectArray = project;
-        console.log(this.projectArray);
       }
     );
   }
@@ -27,10 +26,7 @@ export class ProjectFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log("addProject():");
-    console.log(this.project);
     this._data.addProject(JSON.parse(JSON.stringify(this.project)));
-    this.project.ownerId = '';
     this.project.title = '';
     this.project.description = '';
     this.project.deadline = new Date();
