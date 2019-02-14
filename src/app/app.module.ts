@@ -18,6 +18,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 
 import { environment } from '../environments/environment';
+import { Profile1formsComponent } from './profile1/profile1forms/profile1forms.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { environment } from '../environments/environment';
     LoginComponent,
     LandingPageComponent,
     ProjectFormComponent,
-    AllProjectsComponent
+    AllProjectsComponent,
+    Profile1formsComponent
   ],
   imports: [
     BrowserModule,

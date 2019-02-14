@@ -6,6 +6,7 @@ import { Profile1Component } from './profile1/profile1.component';
 import { ProjectFormComponent } from './projects/project-form/project-form.component';
 import { LoginComponent } from './login/login.component';
 import { AllProjectsComponent } from './projects/all-projects/all-projects.component';
+import { Profile1formsComponent } from './profile1/profile1forms/profile1forms.component';
 
 const routes: Routes = [
 { path: '', component: LandingPageComponent },
