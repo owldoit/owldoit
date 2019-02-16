@@ -1,7 +1,8 @@
-import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+
 import { Project } from './../project';
+import { ProjectService } from './../../services/project.service';
+
 
 @Component({
   selector: 'app-all-projects',
@@ -10,17 +11,18 @@ import { Project } from './../project';
 })
 export class AllProjectsComponent implements OnInit { 
 
-  public projects: Observable<any[]>;
+  public projects: Project[];
   public selectedProject: Project;
   
-  constructor ( private afs: AngularFirestore ) {
-    this.projects = afs.collection('/projects').valueChanges();
+  constructor (private projectService: ProjectService) {}
+
+  ngOnInit() {
+    this.projectService.getProjects().subscribe(projects => {
+      this.projects = projects;
+    });
   }
-
-
-  ngOnInit() {}
-
   onSelect(project: Project): void {
     this.selectedProject = project;
+    console.log(project.id);
   }
 }
