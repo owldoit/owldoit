@@ -33,6 +33,7 @@ div.container {
   background-color: rgba(40,40,40,.9);
   margin-left: 86px;
   margin-right: 86px;
+  min-width: 500px;
 }
 h1 {
   text-align: center;
@@ -52,5 +53,12 @@ p {
 
 @media (min-width: 576px){
 .col-sm-6 {
-    max-width: 80%;
-}}
+  max-width: 80%;
+  }
+}
+
+@media (min-width: 768px){
+  div.introduction {
+    margin-left: 10%;
+  }
+}

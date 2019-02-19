@@ -9,3 +9,9 @@ div.container {
   position: absolute;
   margin-left: 15%;
 }
+
+@media (min-width: 400px) {
+  div.container {
+    margin-left: 122px;
+  }
+}

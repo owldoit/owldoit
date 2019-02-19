@@ -221,3 +221,7 @@ $RECYCLE.BIN/
 Dockerfile
 docker-compose.yml
 nginx.conf
+
+#Node Modules
+package.json
+package-lock.json

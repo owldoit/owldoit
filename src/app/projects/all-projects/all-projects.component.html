@@ -1,21 +1,27 @@
 <body>
-  
+  <app-project-detail [project]="selectedProject"></app-project-detail>
+
   <h1>All Projects</h1>
-
-  <ul class="list-unstyled">
-    <li *ngFor="let project of projects | async">
-        <div class="list-group">
-          <a href="#" class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">{{ project.title }}</h5>
-              <small class="badge badge-danger badge-pill"><i class="fas fa-stopwatch"></i> {{ project.deadline.seconds * 1000 | date: 'MM-dd-yyyy' }}</small>
+    <ul class="list-unstyled">
+      <li
+        *ngFor="let project of projects"
+        [class.selected]="project === selectedProject"
+        (click)="onSelect(project)"
+        >
+          <div class="list-group">
+            <div class="list-group-item list-group-item-action">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{ project.title }}</h5>
+                <small class="badge badge-danger badge-pill">
+                  <i class="fas fa-stopwatch"></i>{{ project.deadline }}
+                </small>
+              </div>
+              <p class="mb-1">{{ project.description | slice : 0 : 50}}...</p>
+              <small class="badge badge-warning badge-pill">
+                <i class="fas fa-user"></i> {{ project.participants }}
+              </small>
             </div>
-            <p class="mb-1">{{ project.description }}</p>
-            <small class="badge badge-warning badge-pill"><i class="fas fa-user"></i> {{ project.participants }}</small>
-          </a>
-        </div>
-    </li>
-  </ul>
-
-
+          </div>
+      </li>
+    </ul>
 </body>

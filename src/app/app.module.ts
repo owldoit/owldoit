@@ -10,20 +10,15 @@ import { LoginComponent } from './login/login.component';
 import { ProjectFormComponent } from './projects/project-form/project-form.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AllProjectsComponent } from './projects/all-projects/all-projects.component';
+import { ProjectDetailComponent } from './projects/project-detail/project-detail.component';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 
-const config = {
-  apiKey: "AIzaSyC7-T4wi6AWcO04Kta1oTo0lkhXwWXQ1XI",
-  authDomain: "owldoit-54a72.firebaseapp.com",
-  databaseURL: "https://owldoit-54a72.firebaseio.com",
-  projectId: "owldoit-54a72",
-  storageBucket: "owldoit-54a72.appspot.com",
-  messagingSenderId: "1004497354491"
-}
+
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -33,12 +28,13 @@ const config = {
     LoginComponent,
     LandingPageComponent,
     ProjectFormComponent,
-    AllProjectsComponent
+    AllProjectsComponent,
+    ProjectDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(config),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,

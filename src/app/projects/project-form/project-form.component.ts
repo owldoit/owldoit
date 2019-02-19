@@ -1,36 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FirestoreDataService } from '../../services/firebase/firestore-data.service';
+import { Project } from '../project';
 
-import { Project }    from '../project';
 
 @Component({
   selector: 'app-project-form',
   templateUrl: './project-form.component.html',
   styleUrls: ['./project-form.component.css']
 })
-export class ProjectFormComponent {
-	project = new Project(0, '', '', '', null, 1);
-	submitted = false;
-	verifiedSubmit = false;
+export class ProjectFormComponent implements OnInit {
+  project = new Project('', '', '', '', null, 1);
 
-	constructor ( ) {}
+  projectArray: Project[] = [];
 
-  onSubmit() { 
-  	if(this.submitted){
-  		this.verifiedSubmit = true;
-  	}
 
-  	if(!this.verifiedSubmit){
-  		this.submitted = true;
-  	}
-
-  	if(this.verifiedSubmit)
-  	{
-  		this.verifiedSubmit = true;
-  		this.submitted = true;
-  	}
+  ngOnInit() {
+    this._data.getProjects().subscribe(
+      (project: Project[]) => {
+        this.projectArray = project;
+      }
+    );
   }
 
-  newProject() {
-	  this.project = new Project(0, '', '', '', null, 1);
-	}
+  constructor(public _data: FirestoreDataService) {
+  }
+
+  onSubmit() {
+    this._data.addProject(JSON.parse(JSON.stringify(this.project)));
+    this.project.title = '';
+    this.project.description = '';
+    this.project.deadline = new Date();
+    this.project.participants = 1;
+  }
+
+  onDelete(project) {
+    this._data.deleteProject(project);
+  }
+
+
 }
