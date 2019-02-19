@@ -1,12 +1,32 @@
 <!-- Sign in module.  Add to Login component after merge -->
 <div *ngIf="auth.user$ | async as user; else login">
-    <pre>
-      {{ user | json }}
-    </pre>
-    <hr>
-    <button class="button" class="btn btn-warning" (click)="auth.signOut()">Sign Out</button>
-  </div>
+	<pre>
+		{{ user | json }}
+	</pre>
+	<hr>
+	<button class="button" class="btn btn-warning" (click)="auth.signOut()">Sign Out</button>
 
-  <ng-template #login>
-    <button class="button" class="btn btn-warning" (click)="auth.googleSignin()">Login with Google</button>
-  </ng-template>
+
+	<div class="container" [hidden]="submitted">
+    <h1 class="text-center">User Profile Info</h1>
+    <form (ngSubmit)="userIsStudent(userForm.value)" #userForm="ngForm">
+			<div class="form-group">
+        <label for="student">Are you a student?</label>
+        {{student.isStudent}}
+        <input type="checkbox" class="form-control" id="student" name="student" [(ngModel)]="student.isStudent" #student="ngModel">
+        <div [hidden]="student.valid || student.pristine"
+				     class="alert alert-danger">
+				  User status is required
+				</div>
+      </div>
+      <button type="submit" class="btn btn-success" [disabled]="!userForm.form.valid">Submit User</button>
+      <br><br>
+ 
+    </form>
+	</div>
+
+</div>
+
+<ng-template #login>
+	<button class="button" class="btn btn-warning" (click)="auth.googleSignin()">Login with Google</button>
+</ng-template>
