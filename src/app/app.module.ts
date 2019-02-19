@@ -17,14 +17,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 
-const config = {
-  apiKey: "AIzaSyC7-T4wi6AWcO04Kta1oTo0lkhXwWXQ1XI",
-  authDomain: "owldoit-54a72.firebaseapp.com",
-  databaseURL: "https://owldoit-54a72.firebaseio.com",
-  projectId: "owldoit-54a72",
-  storageBucket: "owldoit-54a72.appspot.com",
-  messagingSenderId: "1004497354491"
-}
+
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -40,7 +34,7 @@ const config = {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(config),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
