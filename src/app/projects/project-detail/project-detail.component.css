@@ -1,6 +1,11 @@
 body {
-    margin-left: 130px;
-    margin-right: 15px;
+    margin: 0 15px 40px 15px;
+}
+
+.project-detail {
+    border: 5px solid slategray;
+    border-radius: 5px;
+    padding: 15px;
 }
 
 .btn {

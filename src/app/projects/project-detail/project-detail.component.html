@@ -1,10 +1,10 @@
 <body>
-  <div *ngIf="project">
+  <div *ngIf="project" class="project-detail">
     <h1>{{ project.title | uppercase }}</h1>
     <p>{{ project.description }}</p>
     <small class="badge badge-danger badge-pill"><i class="fas fa-stopwatch"></i> {{ project.deadline}}</small>
     <small class="badge badge-warning badge-pill"><i class="fas fa-user"></i> {{ project.participants }}</small>
-    <button type="button" class="btn btn-secondary">All Projects</button>
+    <br>
     <button type="button" class="btn btn-secondary">Sign Up</button>
     <button type="button" class="btn btn-secondary">Edit Project</button>
   </div>

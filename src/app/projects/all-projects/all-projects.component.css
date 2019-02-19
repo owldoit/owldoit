@@ -5,4 +5,5 @@ body {
 
 .list-group {
     margin: 20px 0 20px 0;
+    box-shadow: 5px 7px lightgray;
 }

@@ -1,4 +1,6 @@
 <body>
+  <app-project-detail [project]="selectedProject"></app-project-detail>
+
   <h1>All Projects</h1>
 
     <ul class="list-unstyled">
@@ -15,7 +17,7 @@
                   <i class="fas fa-stopwatch"></i>{{ project.deadline }}
                 </small>
               </div>
-              <p class="mb-1">{{ project.description }}</p>
+              <p class="mb-1">{{ project.description | slice : 0 : 50}}...</p>
               <small class="badge badge-warning badge-pill">
                 <i class="fas fa-user"></i> {{ project.participants }}
               </small>
@@ -25,4 +27,3 @@
     </ul>
 </body>
 
-<app-project-detail [project]="selectedProject"></app-project-detail>
