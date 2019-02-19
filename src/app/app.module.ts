@@ -8,6 +8,7 @@ import { Profile1Component } from './profile1/profile1.component';
 import { Profile2Component } from './profile2/profile2.component';
 import { LoginComponent } from './login/login.component';
 import { ProjectFormComponent } from './projects/project-form/project-form.component';
+import { Profile1formsComponent } from './profile1/profile1forms/profile1forms.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AllProjectsComponent } from './projects/all-projects/all-projects.component';
 
@@ -18,7 +19,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 
 import { environment } from '../environments/environment';
-import { Profile1formsComponent } from './profile1/profile1forms/profile1forms.component';
+
 
 @NgModule({
   declarations: [
