@@ -30,7 +30,7 @@ import { environment } from '../environments/environment';
     LandingPageComponent,
     ProjectFormComponent,
     AllProjectsComponent,
-    Profile1formsComponent
+    
   ],
   imports: [
     BrowserModule,
