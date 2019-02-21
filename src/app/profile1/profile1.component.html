@@ -1,47 +1,28 @@
-<div class="container">
-  <div class="row">
-    <div class="offset-md-1 col-md-5 ">
-      <h1 class="stNa"> {{ first.name }} {{ last.name }} </h1>
-      <h3 class="dmyXp"> {{ time.expirence }} </h3>
-      <h3 class="stemp"> {{student.employment}} </h3>
-    </div>
-    <div class="offset-md-1 col-md-5 ">
-      <img src="" alt="" class="profilePic">
-    </div>
+<div class="profile-fill">
+  <h1>User Profile</h1>
+
+  <div *ngIf="auth.user$ | async as user; then authenticated else guest">
+      <!-- template will replace this div -->
   </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="offset-md-1 col-md-10">
-      <h3 class="bio"> Biography:</h3>
-      <p class="bioText"> {{ student.Bio }} </p>
-    </div>
+
+
+  <!-- User NOT logged in -->
+  <ng-template #guest>
+  <h3>Hey, you're not logged in!</h3>
+  <p>Login to get started...</p>
+
+  <button class="button" class="btn btn-warning" routerLink="/login"> Login Page</button>
+
+  </ng-template>
+
+
+  <!-- User logged in -->
+  <ng-template #authenticated>
+  <div *ngIf="auth.user$ | async as user">
+      <img class="user-image" [src]="user.photoURL">
+      <h1>{{ user.displayName }}</h1>
+      <p>Email: {{ user.email }}</p>
+      <button class="button" class="btn btn-warning" (click)="auth.signOut()" routerLink="/login">Logout</button>
   </div>
-</div>
-<div class="contain">
-  <div class="row">
-    <div class="offset-md-1 col-md-10 offset-md-1 ">
-      <h3 class="subLang"> Languages/Sublanguages:</h3>
-      <p class="subLangText"> {{sublanguage.text}} </p>
-    </div>
-  </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="offset-md-1 col-md-10 offset-md-1">
-      <h3 class="contactInfo"> Contact: </h3>
-        <h5 class="emailInfo"> Email: {{ email.info }} </h5>
-        <h5 class="phoneNumb"> Phone: {{ phone.number }} </h5>
-        <h5 class="slack"> Slack: {{ slack.username }} </h5>
-        <h5 class="githubInfo"> Github: {{ github.username }} </h5>
-    </div>
-  </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="offset-md-1 col-md-10 offset-md-1">
-      <h3 class="userAgree"> User agreement: </h3>
-        <p class="blehblehbleh"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, quo enim nulla nemo iusto voluptatum, expedita laboriosam nobis soluta necessitatibus ex recusandae possimus accusamus aperiam debitis tenetur nihil corrupti. Recusandae. </p>
-    </div>
-  </div>
+  </ng-template>
 </div>

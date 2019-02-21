@@ -11,6 +11,7 @@ import { ProjectFormComponent } from './projects/project-form/project-form.compo
 import { Profile1formsComponent } from './profile1/profile1forms/profile1forms.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AllProjectsComponent } from './projects/all-projects/all-projects.component';
+import { ProjectDetailComponent } from './projects/project-detail/project-detail.component';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -30,7 +31,8 @@ import { environment } from '../environments/environment';
     LandingPageComponent,
     ProjectFormComponent,
     AllProjectsComponent,
-    
+    Profile1formsComponent
+    ProjectDetailComponent
   ],
   imports: [
     BrowserModule,
