@@ -89,6 +89,29 @@ export class FirestoreDataService {
   	return user.uid;
   }
 
+  getStudentId(){
+    let db = firebase.firestore();
+    let user = this.getUserId();
+    let studentId:string;
+
+    let studentpromise = db.collection("students").where("uid", "==", this.getUserId())
+                    .get()
+                    .then(function(querySnapshot) {
+                        querySnapshot.forEach(function(doc) {
+                            console.log(doc.id, " => ", doc.data());
+                            studentId = doc.id;
+                            console.log("inner student id = " + studentId);
+                            return studentId;
+                        });
+                    })
+                    .catch(function(error) {
+                        console.log("Error getting documents: ", error);
+                    });
+    console.log("promise= " + studentpromise);
+
+    return studentId;
+  }
+
   getStudents() {
     return this.students;
   }
@@ -102,6 +125,21 @@ export class FirestoreDataService {
   deleteStudent(student) {
     this.studentDocument = this._afs.doc(`students/${student.id}`);
     this.studentDocument.delete();
+  }
+
+  signUpForProject(project){
+    let projects = {};
+    projects[`projects.${project}`] =  "In Progress";
+    let student = this.getStudentId();
+    console.log("student= "+student);
+    this.studentDocument = this._afs.doc(`students/${this.getStudentId()}`);
+    console.log("2");
+
+    this.studentDocument.update(projects);
+    console.log(projects);
+
+    console.log("4");
+    console.log(this.studentDocument);
   }
 
 }
